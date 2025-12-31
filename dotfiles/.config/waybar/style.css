@@ -1,0 +1,84 @@
+/* ==== Tipografía ==== */
+* {
+  font-family: "SF Pro Display",
+               "SF Pro Text",
+               "JetBrainsMono Nerd Font",
+               sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #cdd6f4; /* Catppuccin text */
+}
+
+/* ==== Barra ==== */
+window#waybar {
+  background: rgba(30, 30, 46, 0.55); /* Catppuccin base */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+}
+
+/* ==== Módulos ==== */
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-weather_quito,
+#custom-updates,
+#custom-power,
+#custom-bluetooth,
+#battery,
+#clock {
+  background: transparent;
+  margin: 0 8px;          /* MÁS separación entre módulos */
+  padding: 4px 12px;      /* MÁS espacio interior */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: 0.15s;
+}
+
+/* ==== Hover ==== */
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#clock:hover,
+#battery:hover,
+#custom-bluetooth:hover,
+#custom-updates:hover,
+#custom-power:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ==== Workspaces ==== */
+#hyprland-workspaces button {
+  background: transparent;
+  padding: 6px 12px;
+  margin: 0 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #bac2de;
+}
+
+#hyprland-workspaces button.active {
+  background: #89b4fa;
+  color: #1e1e2e;
+  font-weight: 800;
+}
+
+#hyprland-workspaces button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ==== Bluetooth states ==== */
+#custom-bluetooth.on {
+  color: #89b4fa;
+}
+
+#custom-bluetooth.connected {
+  color: #a6e3a1;
+}
+
+#custom-bluetooth.off {
+  color: #f38ba8;
+}
+
