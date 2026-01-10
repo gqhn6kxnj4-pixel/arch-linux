@@ -27,7 +27,41 @@ fi
 
 # 4. Copiar dotfiles
 echo "📁 Instalando dotfiles..."
-cp -r dotfiles/.* ~/
+echo "🔗 Creando enlaces simbólicos..."
+
+for file in dotfiles/.zshrc; do
+  target="$HOME/$(basename "$file")"
+
+  if [[ -e "$target" || -L "$target" ]]; then
+    echo "⚠️ $target ya existe, se omite"
+  else
+    ln -s "$(pwd)/$file" "$target"
+    echo "✔ Enlace creado: $target"
+  fi
+done
+
+# Enlaces para ~/.config
+mkdir -p ~/.config
+for dir in dotfiles/.config/*; do
+  name=$(basename "$dir")
+  target="$HOME/.config/$name"
+
+  if [[ -e "$target" || -L "$target" ]]; then
+    echo "⚠️ ~/.config/$name ya existe, se omite"
+  else
+    ln -s "$(pwd)/$dir" "$target"
+    echo "✔ Enlace creado: ~/.config/$name"
+  fi
+done
+
+# Enlaces para ~/.local/bin
+mkdir -p ~/.local
+if [[ ! -e ~/.local/bin ]]; then
+  ln -s "$(pwd)/dotfiles/.local/bin" ~/.local/bin
+  echo "✔ Enlace creado: ~/.local/bin"
+else
+  echo "⚠️ ~/.local/bin ya existe, se omite"
+fi
 
 echo "✅ Instalación base completada"
 echo "➡️ Reinicia sesión para aplicar cambios"
