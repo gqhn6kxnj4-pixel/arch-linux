@@ -1,6 +1,7 @@
 7zip
 adw-gtk-theme
 amd-ucode
+android-tools
 aspell
 aspell-es
 atomicparsley
@@ -10,6 +11,7 @@ blueman
 bluez
 bluez-utils
 brave-bin
+breeze
 brightnessctl
 btrfs-progs
 calcurse
@@ -56,6 +58,7 @@ inotify-tools
 intel-media-driver
 iwd
 jq
+kdeconnect
 kitty
 kwallet-pam
 kwalletmanager
@@ -118,6 +121,7 @@ slurp
 smartmontools
 snapper
 sof-firmware
+sshfs
 steam
 thunar
 thunar-archive-plugin
